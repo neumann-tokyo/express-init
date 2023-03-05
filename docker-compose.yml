@@ -1,0 +1,69 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=development
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  db-test:
+    image: postgres:15
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=test
+  migrate:
+    image: migrate/migrate
+    volumes:
+      - ./db/migrations:/migrations
+    command:
+      [
+        "-source",
+        "file:///migrations",
+        "-database",
+        "postgres://postgres:password@db:5432/development?sslmode=disable",
+        "up"
+      ]
+    links:
+      - db
+  migrate-test:
+    image: migrate/migrate
+    volumes:
+      - ./db/migrations:/migrations
+    command:
+      [
+        "-source",
+        "file:///migrations",
+        "-database",
+        "postgres://postgres:password@db-test:5432/test?sslmode=disable",
+        "up"
+      ]
+    links:
+      - db-test
+  web:
+    build:
+      context: .
+    command: bash -c "pnpm install && pnpm run dev"
+    volumes:
+      - .:/app
+      - node-modules-data:/app/node_modules
+    ports:
+      - "3000:3000"
+    links:
+      - db
+      - db-test
+      - migrate
+      - migrate-test
+    env_file:
+      - .env
+
+volumes:
+  postgres-data:
+  node-modules-data:
