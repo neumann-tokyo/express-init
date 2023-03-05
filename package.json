@@ -18,7 +18,8 @@
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.jsx,.tsx .",
     "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.ts,.jsx,.tsx --fix .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|jsx|tsx|json)\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\"",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +34,7 @@
     "concurrently": "^7.6.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
+    "husky": "^8.0.3",
     "nodemon": "^2.0.21",
     "prettier": "^2.8.4",
     "ts-node": "^10.9.1",

@@ -11,6 +11,7 @@ specifiers:
   eslint: ^8.35.0
   eslint-config-prettier: ^8.6.0
   express: ^4.18.2
+  husky: ^8.0.3
   morgan: ^1.10.0
   nodemon: ^2.0.21
   prettier: ^2.8.4
@@ -35,6 +36,7 @@ devDependencies:
   concurrently: 7.6.0
   eslint: 8.35.0
   eslint-config-prettier: 8.6.0_eslint@8.35.0
+  husky: 8.0.3
   nodemon: 2.0.21
   prettier: 2.8.4
   ts-node: 10.9.1_alpjt73dvgv6kni625hu7f2l4m
@@ -1303,6 +1305,12 @@ packages:
       statuses: 2.0.1
       toidentifier: 1.0.1
     dev: false
+
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /iconv-lite/0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
