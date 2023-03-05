@@ -16,6 +16,7 @@
     "dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec\"",
     "swagger": "tsoa spec",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.jsx,.tsx .",
+    "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.ts,.jsx,.tsx --fix .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|jsx|tsx|json)\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

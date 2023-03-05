@@ -1,8 +1,8 @@
 import { Get, Route } from "tsoa";
 
-interface PingResponse {
+type PingResponse = {
   message: string;
-}
+};
 
 @Route("ping")
 export default class PingController {
