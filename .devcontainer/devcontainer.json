@@ -28,7 +28,9 @@
   // "shutdownAction": "none",
 
   // Uncomment the next line to run commands after the container is created.
-  "postCreateCommand": "git config --global core.pager \"diff-so-fancy | less --tabs=4 -RFX\" && git config --global interactive.diffFilter \"diff-so-fancy --patch\" && git config --bool --global diff-so-fancy.useUnicodeRuler false && git config --global --add safe.directory /app"
+  // "postCreateCommand": "git config --global core.pager \"diff-so-fancy | less --tabs=4 -RFX\" && git config --global interactive.diffFilter \"diff-so-fancy --patch\" && git config --bool --global diff-so-fancy.useUnicodeRuler false && git config --global --add safe.directory /app"
+
+  "postAttachCommand": "git config --global core.pager \"diff-so-fancy | less --tabs=4 -RFX\" && git config --global interactive.diffFilter \"diff-so-fancy --patch\" && git config --bool --global diff-so-fancy.useUnicodeRuler false && git config --global --add safe.directory /app"
 
   // Configure tool-specific properties.
   // "customizations": {},
