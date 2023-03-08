@@ -30,11 +30,24 @@
   // Uncomment the next line to run commands after the container is created.
   // "postCreateCommand": "git config --global core.pager \"diff-so-fancy | less --tabs=4 -RFX\" && git config --global interactive.diffFilter \"diff-so-fancy --patch\" && git config --bool --global diff-so-fancy.useUnicodeRuler false && git config --global --add safe.directory /app"
 
-  "postAttachCommand": "git config --global core.pager \"diff-so-fancy | less --tabs=4 -RFX\" && git config --global interactive.diffFilter \"diff-so-fancy --patch\" && git config --bool --global diff-so-fancy.useUnicodeRuler false && git config --global --add safe.directory /app"
+  "postAttachCommand": "git config --global core.pager \"diff-so-fancy | less --tabs=4 -RFX\" && git config --global interactive.diffFilter \"diff-so-fancy --patch\" && git config --bool --global diff-so-fancy.useUnicodeRuler false && git config --global --add safe.directory /app",
 
   // Configure tool-specific properties.
   // "customizations": {},
 
   // Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "devcontainer"
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rvest.vs-code-prettier-eslint",
+        "ms-azuretools.vscode-docker",
+        "wmaurer.change-case",
+        "streetsidesoftware.code-spell-checker",
+        "vivaxy.vscode-conventional-commits",
+        "sleistner.vscode-fileutils",
+        "rangav.vscode-thunder-client"
+      ]
+    }
+  }
 }
