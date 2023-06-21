@@ -1,0 +1,41 @@
+{
+  "name": "express-init",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=7.28.0"
+  },
+  "scripts": {
+    "dev": "nodemon -x 'node ./src/index.js; touch ./src/index.js'",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.jsx .",
+    "lint-fix": "eslint --ignore-path .gitignore --ext .js,.jsx --fix .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|json|sql|md)\"",
+    "test": "node --test",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "husky": "^8.0.3",
+    "nodemon": "^2.0.21",
+    "prettier": "^2.8.4",
+    "prettier-plugin-sql": "^0.13.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "knex": "^2.4.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.9.0",
+    "pg-types": "^4.0.1",
+    "spacetime": "^7.4.4"
+  }
+}
