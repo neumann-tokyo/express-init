@@ -1,11 +1,10 @@
-import express, { Application } from "express";
 import morgan from "morgan";
 import Router from "./routes";
 import swaggerUi from "swagger-ui-express";
 
 const PORT = process.env.PORT || 3000;
 
-const app: Application = express();
+const app = express();
 
 app.use(express.json());
 app.use(morgan("tiny"));
